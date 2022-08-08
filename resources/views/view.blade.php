@@ -4,11 +4,37 @@
     </x-slot>
 
 
-
-
     <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="px-4 sm:px-6 lg:px-8">
         <div class="sm:flex sm:items-center">
+        <form id="groups-filter-form" class="" role="form">
+                    <div>
+                        <div class="">
+                            <label class="control-label" for="filter-name">Name</label>
+                            <x-input type="text" name="name" class="block mt-1 w-full"/>
+                        </div>
+                        <div class="">
+                            <label class="control-label" for="filter-phone">Phone</label>
+                            <x-input type="text" name="phone" class="block mt-1 w-full"/>
+                        </div>
+                        <div class="">
+                            <label class="control-label" for="pref-perpage">Email</label>
+                            <x-input type="text" class="block mt-1 w-full" name="email" id="pref-perpage"/>
+                        </div>
+                        <div class="">
+                            <label class="control-label" for="pref-search">ID Number</label>
+                            <x-input type="text" class="block mt-1 w-full" name="id_number" id="pref-search"/>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col">
+                            <x-button type="submit" id="filter-submit" class="ml-3">
+                                <i class="fas fa-filter"></i> Filter
+                            </x-button>
+                            <button type="reset"class="btn btn-success btn-round btn-border btn-sm">Clear</button>
+                        </div>
+                    </div>
+                </form>
             <div class="sm:flex-auto">
                 <h1 class="text-xl font-semibold text-gray-900">Employees</h1>
                 <p class="mt-2 text-sm text-gray-700">The list of all the Employees in our Agency.</p>

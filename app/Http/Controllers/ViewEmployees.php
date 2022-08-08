@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Maatwebsite\Excel\Facades\Excel;
 use DB;
+use EloquentBuilder;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use App\Exports\EmployeesExport;
@@ -15,7 +16,7 @@ class ViewEmployees extends Controller
      public function view(Request $request)
     {
         //$ViewEmployees = DB::select('select * from employees');
-        $ViewEmployees = Employee::all();
+        $ViewEmployees = EloquentBuilder::to(Employee::class, request()->all())->get();
        // return  $ViewEmployees;
        // return view('view', $ViewEmployees);
 
